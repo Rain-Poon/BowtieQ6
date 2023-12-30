@@ -51,21 +51,22 @@
       function navigateToLink() {
         window.location.href = 'https://www.myip.com/';
       }
-      function trackEvent(category, action, label) {
-        gtag('event', action, {
-          'event_category': category,
-          'event_label': label
+      function fireEvent(clickedCode) {
+        gtag('event', 'element-clicked', {
+          'event_category': 'code',
+          'event_label': clickedCode.innerText
         });
+        console.log(clickedCode.innerText)
       }
     </script>
     <div class="installation-instructions">
       <h3>Installation</h3>
-      <code onclick="trackEvent('code', 'element-clicked', 'installation-code')">$ gem install power</code>
-      <code>$ gem install reality</code>
-      <code>$ gem install mind</code>
-      <code>$ gem install space</code>
-      <code>$ gem install time</code>
-      <code>$ gem install soul</code>
+      <code onclick="trackEvent(this)">$ gem install power</code>
+      <code onclick="trackEvent(this)">$ gem install reality</code>
+      <code onclick="trackEvent(this)">$ gem install mind</code>
+      <code onclick="trackEvent(this)">$ gem install space</code>
+      <code onclick="trackEvent(this)">$ gem install time</code>
+      <code onclick="trackEvent(this)">$ gem install soul</code>
     </div>
     <div class="usage-instructions">
       <h3>Basic Usage</h3>
